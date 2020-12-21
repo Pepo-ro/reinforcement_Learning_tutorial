@@ -33,8 +33,9 @@ model = PPO2(policy=CnnPolicy, env=env, verbose=0, learning_rate=2.5e-5, tensorb
 model = PPO2.load('model', env=env, verbose=0) # 推論したいときは、こちら
 
 state = env.reset()
-total_reward = 0
 env.close()
+
+total_reward = 0
 
 while True:
     # 環境の描画
