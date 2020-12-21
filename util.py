@@ -59,13 +59,6 @@ class CustomRewardAndDoneEnv(gym.Wrapper):
         self._cur_x = info['x']
         reward = max(0, self._cur_x - self._max_x)
         self._max_x = max(self._max_x, self._cur_x)
-        
-        # if self._before_x == self._cur_x:
-        #   self._count_flame += 1
-        #   reward -= self._count_flame * 0.01
-
-        # else :
-        #   self._count_flame = 0
 
         self._before_x = self._cur_x
 
