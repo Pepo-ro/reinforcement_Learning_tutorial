@@ -5,7 +5,7 @@ https://colab.research.google.com/github/Pepo-ro/reinforcement_Learning_tutorial
 
 
 
-# 環境作成方法
+# Anaconda上で環境作成方法
 ```
 conda create -n "環境名" -f envroot.yaml
 ```
