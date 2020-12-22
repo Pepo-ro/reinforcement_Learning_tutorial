@@ -7,6 +7,7 @@ from stable_baselines.common.vec_env import DummyVecEnv
 from baselines.common.retro_wrappers import *
 from stable_baselines.bench import Monitor
 from stable_baselines.common import set_global_seeds
+from policy import TransformerPolicy
 
 env = retro.make(game='SonicTheHedgehog-Genesis', state='GreenHillZone.Act1')
 env = SonicDiscretizer(env)
@@ -27,7 +28,8 @@ set_global_seeds(1234)
 
 env = DummyVecEnv([lambda: env])
 
-model = PPO2(policy=CnnPolicy, env=env, verbose=0, learning_rate=2.5e-5, tensorboard_log=log_dir)
+model = PPO2(policy=CnnPolicy, env=env, verbose=0, learning_rate=2.5e-5, tensorboard_log=log_dir) #CnnPolicy
+#model = PPO2(policy=TransformerPolicy, env=env, verbose=0, learning_rate=2.5e-5, tensorboard_log=log_dir) # TransformerPolicy
 # model.learn(total_timesteps=200000, callback=callback) # 学習したいときは、こちら
 
 model = PPO2.load('model', env=env, verbose=0) # 推論したいときは、こちら
