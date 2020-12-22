@@ -1,5 +1,6 @@
 from stable_baselines.common.policies import ActorCriticPolicy
 from stable_baselines.a2c.utils import linear
+from transformer import vision_transform
 
 class TransformerPolicy(ActorCriticPolicy):
 
