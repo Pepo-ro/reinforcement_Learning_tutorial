@@ -3,7 +3,7 @@ import tensorflow as tf
 from stable_baselines.a2c.utils import linear,conv_to_fc
 
 
-def vision_transform(input_tensor, params, **kwargs):
+def vision_transformer(input_tensor, params, **kwargs):
     patch_emb = tf.layers.conv2d(
         input_tensor,
         params["hidden_size"],
